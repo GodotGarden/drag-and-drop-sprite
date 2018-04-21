@@ -4,13 +4,12 @@ var mouse_in = false
 var dragging = false
 
 func _process(delta):
-	if (mouse_in && Input.is_action_pressed("left_click")):
+	if mouse_in && Input.is_action_pressed("left_click"):
 		dragging = true
 		
-	if (dragging && Input.is_action_pressed("left_click")):
-		var position = get_viewport().get_mouse_position()
+	if dragging && Input.is_action_pressed("left_click"):
+		position = get_viewport().get_mouse_position()
 		
-		set_position(position)
 	else:
 		dragging = false
 
